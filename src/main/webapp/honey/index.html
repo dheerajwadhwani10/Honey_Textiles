@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/my-style.css">
+
+<script src="js/jquery.js"></script>
+<script src="js/jquery.min.js"></script>
+
+<script src="js/angular.js"></script>
+<!-- <script src="src/js/angular.min.js"></script> -->
+
+<script src="js/angular-ui-router.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/ui-bootstrap-tpls-2.5.0.js"></script>
+<script src="js/angular-material.min.js"></script>
+
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/routing.js"></script>
+<script src="js/controller.js"></script>
+<script src="js/config.js"></script>
+<body>
+	<div ng-app="honeyApp" ng-controller="myCtrl">
+
+		<!-- <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">Konami</a>
+        </div>
+        Collect the nav links, forms, and other content for toggling
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+            <ul class="nav navbar-nav">
+                <li uib-dropdown="">
+                    <a href="#" uib-dropdown-toggle="">
+                        Dropdown<b class="caret"></b>
+                    </a>
+                    <tree tree="konami"></tree>
+                </li>
+                <li uib-dropdown="">
+                    <a href="#" uib-dropdown-toggle="">
+                        Just a clone
+                        <span class="caret"></span>
+                    </a>
+                    <tree tree="konami"></tree>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li uib-dropdown="">
+                    <a href="#" uib-dropdown-toggle="">
+                        Dropdown right<b class="caret"></b>
+                    </a>
+                    <tree tree="konami"></tree>
+                </li>
+                <li uib-dropdown="">
+                    <a href="#" uib-dropdown-toggle="">
+                        Just a clone right<span class="caret"></span>
+                    </a>
+                    <tree tree="konami"></tree>
+                </li>
+            </ul>
+        </div>
+        /.navbar-collapse
+    </nav> -->
+
+		<nav class="navbar navbar-inverse no-padding" style="margin-bottom:0px;">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target="#myNavbar">
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Honey Textiles</a>
+				</div>
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">Home</a></li>
+						<!-- <li class="dropdown"><a class="dropdown-toggle"
+							data-toggle="dropdown" href="">Products<span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">Silk</a></li>
+								<li><a href="#">cotton</a></li>
+							</ul></li> -->
+						<li><a ui-sref="aboutUs">About us</a></li>
+						<li><a ui-sref="contact">Contact</a></li>
+						<li><a ui-sref="product">Product</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#"><span class="glyphicon glyphicon-user"></span>
+								Welcome {{firstName}}, {{lastName}}</a></li>
+						<!-- <li><a href="#"><span class="glyphicon glyphicon-user"></span>
+								Sign Up</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-log-in"></span>
+								Login</a></li> -->
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div style="width: 100%; height: 300px; border: 2px solid gray"
+			ng-show="homeSlider">
+			<div class="imageslide" ng-switch='slideshow' ng-animate="'animate'">
+				<div class="slider-content" ng-switch-when="1">
+					<img src="images/1.jpg" style="width: 100%; height: 295px;" />
+				</div>
+				<div class="slider-content" ng-switch-when="2">
+					<img src="images/2.jpg" style="width: 100%; height: 295px;" />
+				</div>
+				<div class="slider-content" ng-switch-when="3">
+					<img src="images/3.jpg" style="width: 100%; height: 295px;" />
+				</div>
+				<div class="slider-content" ng-switch-when="4">
+					<img src="images/4.jpg" style="width: 100%; height: 295px;" />
+				</div>
+			</div>
+		</div>
+
+		<div class="ng-scope" style="width: 98%;" ui-view></div>
+
+		<!--footer start from here-->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<!-- <div class="col-md-4 col-sm-6 footerleft ">
+						<div class="logofooter">Logo</div>
+						<p>
+							<i class="fa fa-map-pin"></i> 210, Aggarwal Tower, Rohini sec 9,
+							New Delhi -        110085, INDIA
+						</p>
+						<p>
+							<i class="fa fa-phone"></i> Phone (India) : +91 9999 878 398
+						</p>
+						<p>
+							<i class="fa fa-envelope"></i> E-mail : info@webenlance.com
+						</p>
+					</div> -->
+					<div class="row">
+						<ul class="list-inline">
+							<li><a href="#"> Career</a></li>
+							<li><a href="#"> Privacy Policy</a></li>
+						</ul>
+					</div>
+
+					<!-- <div class="col-md-3 col-sm-6">
+						<div class="fb-page" data-href="https://www.facebook.com/facebook"
+							data-tabs="timeline" data-height="300" data-small-header="false"
+							style="margin-bottom: 15px;" data-adapt-container-width="true"
+							data-hide-cover="false" data-show-facepile="true">
+							<div class="fb-xfbml-parse-ignore">
+								<blockquote cite="https://www.facebook.com/facebook">
+									<a href="https://www.facebook.com/facebook">Facebook</a>
+								</blockquote>
+							</div>
+						</div>
+					</div> -->
+
+				</div>
+			</div>
+		</footer>
+		<!--footer start from here-->
+
+		<div class="copyright">
+			<div class="container">
+				<div class="col-md-6">
+					<p>© 2017</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
